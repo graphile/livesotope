@@ -4,7 +4,21 @@ Magical layouts with PostGraphile live queries.
 
 ![](./demo.gif)
 
-To install locally:
+To install locally, first make sure you have a local PostgreSQL server
+installed and [configured to support logical
+decoding](https://www.graphile.org/postgraphile/live-queries/#graphilesubscriptions-lds)
+by ensuring the following settings are set in `postgresql.conf` (and then
+restarting PostgreSQL):
+
+```
+wal_level = logical
+max_wal_senders = 10
+max_replication_slots = 10
+```
+
+(NOTE: you can determine where your `postgresql.conf` file is by running `psql -U postgres -c 'SHOW config_file'`)
+
+You'll also need Node v8.6 or higher (v12 recommended) installed; then run:
 
 ```
 git clone https://github.com/graphile/livesotope.git
