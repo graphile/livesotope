@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import gql from "graphql-tag";
+import { Subscription } from "react-apollo";
+
+const Rankings = gql`
+  subscription Rankings {
+    people(orderBy: RANKING_DESC) {
+      nodes {
+        id
+        name
+        ranking
+      }
+    }
+  }
+`;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Subscription subscription={Rankings}>
+        {({ data, loading }) => (
+          <ul>
+            {(data && data.people ? data.people.nodes : []).map(person => (
+              <li key={person.id}>
+                {person.name} ({person.ranking})
+              </li>
+            ))}
+          </ul>
+        )}
+      </Subscription>
     </div>
   );
 }

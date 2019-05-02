@@ -10,26 +10,28 @@
     "apollo-link": "^1.2.11",
     "apollo-link-http": "^1.5.14",
     "apollo-link-ws": "^1.0.17",
+    "graphql-tag": "^2.10.1",
     "postgraphile": "^4.4.0-rc.1",
     "react": "^16.8.6",
+    "react-apollo": "^2.5.5",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0"
+    "react-scripts": "3.0.0",
+    "subscriptions-transport-ws": "^0.9.16"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postgraphile": "postgraphile -c livesotope -s app_public --watch --append-plugins @graphile-contrib/pg-simplify-inflector,@graphile/subscriptions-lds --live --port 9393",
+    "random": "node random.js",
+    "dev": "concurrently --kill-others --names pg,ra 'npm run postgraphile' 'npm run start' 'npm run random'"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
