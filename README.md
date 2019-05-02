@@ -25,7 +25,7 @@ max_wal_senders = 10
 max_replication_slots = 10
 ```
 
-(NOTE: you can determine where your `postgresql.conf` file is by running `psql -U postgres -c 'SHOW config_file'`)
+(NOTE: you can determine where your `postgresql.conf` file is by running `psql template1 -c 'SHOW config_file'`)
 
 You also need to install the `wal2json` PostgreSQL plugin:
 
