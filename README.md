@@ -2,6 +2,7 @@
 
 Magical layouts with PostGraphile live queries.
 
+![](./demo.gif)
 
 ```
 git clone https://github.com/graphile/livesotope.git
