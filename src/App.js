@@ -30,7 +30,7 @@ function App() {
       padding: 10,
       maxWidth: 680,
       margin: '50px auto',
-      backgroundColor: '#0000ff',
+      backgroundColor: '#4880b2',
     }}>
       <Subscription subscription={Rankings}>
         {({ data, loading }) => (
