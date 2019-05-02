@@ -18,7 +18,17 @@ max_replication_slots = 10
 
 (NOTE: you can determine where your `postgresql.conf` file is by running `psql -U postgres -c 'SHOW config_file'`)
 
-You'll also need Node v8.6 or higher (v12 recommended) installed; then run:
+You also need to install the `wal2json` PostgreSQL plugin:
+
+```
+git clone https://github.com/eulerto/wal2json.git
+cd wal2json
+USE_PGXS=1 make
+USE_PGXS=1 make install
+cd ..
+```
+
+Finally you need Node v8.6 or higher (v12 recommended) installed; then run:
 
 ```
 git clone https://github.com/graphile/livesotope.git
