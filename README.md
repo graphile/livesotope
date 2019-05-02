@@ -4,6 +4,8 @@ Magical layouts with PostGraphile live queries.
 
 ![](./demo.gif)
 
+To install locally:
+
 ```
 git clone https://github.com/graphile/livesotope.git
 cd livesotope
@@ -13,6 +15,12 @@ yarn
 yarn dev
 ```
 
+The demo inserts 16 "people" into a database, and then runs a script
+(`./random.js`) which periodically increases the ranking of one of these people
+by a random amount. We then use Apollo and `react-flip-move` to render the live
+query of people ordered by ranking.
+
+Read more about PostGraphile live queries [in our docs](https://www.graphile.org/postgraphile/live-queries/).
 
 The default `create-react-app` text follows:
 
