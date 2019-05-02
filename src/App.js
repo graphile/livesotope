@@ -40,6 +40,7 @@ function App() {
                 width: 150,
                 height: 150,
                 backgroundImage: `url(${person.avatarUrl})`,
+                backgroundSize: '140%',
                 margin: 10
               }}>
               <span style={nameStyle}>{person.name}</span><br /><span style={scoreStyle}>{person.ranking}</span>
