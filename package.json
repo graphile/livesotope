@@ -11,10 +11,12 @@
     "apollo-link-http": "^1.5.14",
     "apollo-link-ws": "^1.0.17",
     "graphql-tag": "^2.10.1",
+    "isotope-layout": "^3.0.6",
     "postgraphile": "^4.4.0-rc.1",
     "react": "^16.8.6",
     "react-apollo": "^2.5.5",
     "react-dom": "^16.8.6",
+    "react-flip-move": "^3.0.3",
     "react-scripts": "3.0.0",
     "subscriptions-transport-ws": "^0.9.16"
   },
@@ -31,7 +33,11 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

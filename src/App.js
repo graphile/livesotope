@@ -1,6 +1,8 @@
 import React from "react";
 import gql from "graphql-tag";
 import { Subscription } from "react-apollo";
+import FlipMove from "react-flip-move";
+import "./index.css"
 
 const Rankings = gql`
   subscription Rankings {
@@ -9,23 +11,41 @@ const Rankings = gql`
         id
         name
         ranking
+        avatarUrl
       }
     }
   }
 `;
 
+const nameStyle = {
+  fontSize: '1.3em',
+  fontWeight: 'bold'
+};
+const scoreStyle = {
+};
+
 function App() {
   return (
-    <div className="App">
+    <div style={{
+      padding: 10,
+      maxWidth: 680,
+      margin: '50px auto',
+      backgroundColor: '#0000ff',
+    }}>
       <Subscription subscription={Rankings}>
         {({ data, loading }) => (
-          <ul>
+          <FlipMove style={{ display: 'flex', flexWrap: 'wrap', }}>
             {(data && data.people ? data.people.nodes : []).map(person => (
-              <li key={person.id}>
-                {person.name} ({person.ranking})
-              </li>
+              <div key={person.id} style={{
+                width: 150,
+                height: 150,
+                backgroundImage: `url(${person.avatarUrl})`,
+                margin: 10
+              }}>
+              <span style={nameStyle}>{person.name}</span><br /><span style={scoreStyle}>{person.ranking}</span>
+              </div>
             ))}
-          </ul>
+          </FlipMove>
         )}
       </Subscription>
     </div>

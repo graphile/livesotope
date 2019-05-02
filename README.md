@@ -1,3 +1,23 @@
+# Livesotope
+
+Magical layouts with PostGraphile live queries.
+
+
+```
+git clone https://github.com/graphile/livesotope.git
+cd livesotope
+createdb livesotope
+psql -f schema.sql livesotope
+yarn
+yarn dev
+```
+
+
+The default `create-react-app` text follows:
+
+---
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

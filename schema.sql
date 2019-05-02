@@ -10,18 +10,20 @@ create table people (
   ranking int not null default 0
 );
 
-insert into people (name) values
-  ('Alice'),
-  ('Bob'),
-  ('Caroline'),
-  ('Dave'),
-  ('Ellie'),
-  ('Fred'),
-  ('Georgina'),
-  ('Harry'),
-  ('Isabelle'),
-  ('Jamie'),
-  ('Kris'),
-  ('Louise'),
-  ('Mitch'),
-  ('Naomi');
+insert into people (name, avatar_url) values
+  ('Alice', '/01.png'),
+  ('Bob', '/00.png'),
+  ('Caroline', '/02.png'),
+  ('Dave', '/04.png'),
+  ('Ellie', '/03.png'),
+  ('Fred', '/05.png'),
+  ('Georgina', '/06.png'),
+  ('Harry', '/08.png'),
+  ('Isabelle', '/07.png'),
+  ('Jamie', '/10.png'),
+  ('Kris', '/09.png'),
+  ('Louise', '/11.png'),
+  ('Mitch', '/13.png'),
+  ('Naomi', '/12.png'),
+  ('Ollie', '/14.png'),
+  ('Polly', '/15.png');
