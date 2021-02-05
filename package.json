@@ -27,7 +27,7 @@
     "eject": "react-scripts eject",
     "postgraphile": "postgraphile -c livesotope -s app_public --watch --append-plugins @graphile-contrib/pg-simplify-inflector,@graphile/subscriptions-lds --live --port 9393",
     "random": "nodemon random.js",
-    "dev": "concurrently --kill-others --names pg,ra 'npm run postgraphile' 'npm run start' 'npm run random'"
+    "dev": "concurrently --kill-others --names pg,ra \"npm run postgraphile\" \"npm run start\" \"npm run random\""
   },
   "eslintConfig": {
     "extends": "react-app"
